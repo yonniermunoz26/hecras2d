@@ -1,0 +1,11 @@
+Proj Title=EstudioHidraulico2D
+Current Plan=p01
+Default Exp/Contr=0.3,0.1
+SI Units
+Geom File=g01
+Unsteady File=u01
+Plan File=p01
+RasMap File=EstudioHidraulico2D.rasmap
+Description=Modelo 2D generado automaticamente via Python
+Y Axis Title=Elevation
+X Axis Title=Station

@@ -1,0 +1,11 @@
+Flow Title=Hidrograma_Diseno
+Program Name=RasUnsteady
+Boundary Location=RioPrincipal,BC_Upstream,Flow Hydrograph
+Stage Hydrograph TW Check= 0
+Flow Hydrograph= 7
+          15.00      28.00      75.50     120.00      85.00      42.00      20.00
+Interval=1HOUR
+Flow Hydrograph Slope= 0.002
+
+Boundary Location=RioPrincipal,BC_Downstream,Normal Depth
+Friction Slope= 0.00250

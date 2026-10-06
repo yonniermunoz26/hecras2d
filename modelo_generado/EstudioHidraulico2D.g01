@@ -1,0 +1,16 @@
+Geom Title=Geometria_Automatica_2D
+Program Name=RasGeometry
+
+2D Flow Area=RioPrincipal
+Cell Size=20.00,20.00
+Default Mann=0.0400
+Outer Perimeter= 4
+    450100.00,1120000.00    450800.00,1120000.00    450800.00,1122500.00    450100.00,1122500.00
+
+Boundary Line=BC_Upstream
+Boundary Line Point Count= 2
+    450150.00,1122500.00    450750.00,1122500.00
+
+Boundary Line=BC_Downstream
+Boundary Line Point Count= 2
+    450150.00,1120000.00    450750.00,1120000.00

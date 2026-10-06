@@ -1,0 +1,16 @@
+Plan Title=Plan Automatizado 01
+Program Name=RasUnsteady
+Short Identifier=p01
+Simulation Date=01JAN2025,00:00,01JAN2025,06:00
+Computation Interval=30SEC
+Output Interval=5MIN
+Mapping Interval=5MIN
+Hydrograph Output Interval=5MIN
+Run Unsteady= 1
+Run PostProcess= 1
+Geom File=g01
+Unsteady File=u01
+2D Flow Equation=Diffusion Wave
+Theta= 1.0
+Theta WarmUp= 1.0
+Diffusion Wave Tolerance= 0.003

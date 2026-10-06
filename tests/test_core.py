@@ -6,6 +6,7 @@ from shapely.geometry import LineString, Polygon
 from hecras_2d_builder.dem.hydrology import calculate_flow_accumulation, calculate_flow_direction
 from hecras_2d_builder.dem.validation import validate_dem
 from hecras_2d_builder.geometry.mesh import generate_mesh
+from hecras_2d_builder.hecras.orchestrator import HECRASProjectBuilder
 from hecras_2d_builder.hydraulics.boundary_conditions import build_boundary_conditions
 from hecras_2d_builder.models.config import ProjectConfig
 from hecras_2d_builder.river.corridor import generate_study_area
@@ -71,3 +72,25 @@ def test_boundary_conditions_are_valid():
     assert bc["upstream"].value == 250
     assert bc["downstream"].type == "normal_depth"
     assert bc["downstream"].value == 0.001
+
+
+def test_hecras_native_files_are_written(tmp_path):
+    builder = HECRASProjectBuilder(project_dir=str(tmp_path), project_name="Modelo2D")
+    perimeter = [(100.0, 100.0), (500.0, 100.0), (500.0, 800.0), (100.0, 800.0)]
+    upstream = [(150.0, 800.0), (450.0, 800.0)]
+    downstream = [(150.0, 100.0), (450.0, 100.0)]
+
+    prj = builder.write_prj()
+    builder.write_p01("01JAN2025,00:00", "01JAN2025,12:00", time_step="1MIN")
+    builder.write_g01("Area2D", perimeter, dx=10.0, dy=10.0, manning=0.035, upstream_line=upstream, downstream_line=downstream)
+    builder.write_u01("Area2D", [10.0, 25.0, 50.0, 30.0, 10.0], time_interval="1HOUR", friction_slope=0.0015)
+    builder.write_rasmap(".\\Terreno_Base.tif")
+
+    assert prj.exists()
+    assert (tmp_path / "Modelo2D.g01").exists()
+    assert (tmp_path / "Modelo2D.u01").exists()
+    assert (tmp_path / "Modelo2D.p01").exists()
+    assert (tmp_path / "Modelo2D.rasmap").exists()
+    assert "Geom File=g01" in prj.read_text(encoding="ascii")
+    assert "2D Flow Area=Area2D" in (tmp_path / "Modelo2D.g01").read_text(encoding="ascii")
+    assert "Boundary Location=Area2D,BC_Upstream,Flow Hydrograph" in (tmp_path / "Modelo2D.u01").read_text(encoding="ascii")

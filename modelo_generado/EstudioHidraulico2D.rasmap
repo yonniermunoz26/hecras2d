@@ -1,0 +1,9 @@
+<RASMapper>
+  <Version>2.0.0</Version>
+  <Terrains Checked="True" Expanded="True">
+    <Terrain Name="Terreno_Base" Type="Raster" Filename=".\Terreno_Base.tif"/>
+  </Terrains>
+  <Geometries Checked="True" Expanded="True">
+    <Layer Name="Geometria_Automatica_2D" Filename=".\EstudioHidraulico2D.g01"/>
+  </Geometries>
+</RASMapper>
