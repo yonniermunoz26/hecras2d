@@ -1,0 +1,20 @@
+{
+  "dem": {
+    "path": "./data/dem.tif",
+    "crs": "EPSG:32618",
+    "resolution": 10.0
+  },
+  "river_centerline": {
+    "type": "LineString",
+    "length_m": 2201.886
+  },
+  "study_area": {
+    "type": "Polygon",
+    "area_m2": 2568165.649
+  },
+  "area_2d": {
+    "type": "Polygon",
+    "area_m2": 2716487.864
+  },
+  "mesh_cells": 27522
+}

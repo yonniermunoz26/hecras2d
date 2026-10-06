@@ -1,0 +1,5 @@
+2026-10-06 10:49:38,516 | INFO | Project folder initialized at output
+2026-10-06 10:49:38,527 | INFO | DEM validation result: True
+2026-10-06 10:51:33,324 | INFO | Project folder initialized at output
+2026-10-06 10:51:33,337 | INFO | DEM validation result: True
+2026-10-06 10:51:34,145 | WARNING | HEC-RAS installation detection: not detected

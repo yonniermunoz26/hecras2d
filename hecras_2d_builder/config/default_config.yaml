@@ -1,0 +1,37 @@
+project:
+  name: rio_ejemplo
+  crs: EPSG:32618
+
+dem:
+  path: ""
+  resolution: 10.0
+
+hydrology:
+  flow_accumulation_threshold: 1000
+  stream_snap_distance: 25.0
+
+study_area:
+  river_buffer_m: 500.0
+  upstream_extension_m: 300.0
+  downstream_extension_m: 400.0
+
+mesh:
+  cell_size_m: 10.0
+  refinement: 1.0
+
+manning:
+  channel: 0.035
+  floodplain: 0.060
+
+boundary:
+  upstream_flow: 250.0
+  downstream_type: normal_depth
+  downstream_slope: 0.001
+
+output:
+  project_folder: ./output
+  project_name: hecras_model
+
+hecras:
+  version: "6.x"
+  auto_run: false

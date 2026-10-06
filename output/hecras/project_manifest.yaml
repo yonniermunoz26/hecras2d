@@ -1,0 +1,13 @@
+version: 6.x
+model_name: rio_ejemplo
+auto_run: false
+human_review_required: true
+warning: The generated model is an initial configuration and must be reviewed by a
+  hydraulic engineer before simulation execution.
+generated_files:
+- output/hecras/project_manifest.yaml
+- output/hecras/geometry.json
+- output/hecras/plan.json
+- output/hecras/unsteady_flow.json
+- output/hecras/README.txt
+

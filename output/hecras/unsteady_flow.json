@@ -1,0 +1,13 @@
+{
+  "boundary_conditions": {
+    "upstream": {
+      "type": "flow",
+      "value": 250.0
+    },
+    "downstream": {
+      "type": "normal_depth",
+      "value": 0.001
+    }
+  },
+  "upstream_flow": 250.0
+}
